@@ -1,5 +1,8 @@
 {
   "name": "myapp",
+  "engines" : {
+    "node" : "8.11.x"
+  },
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
