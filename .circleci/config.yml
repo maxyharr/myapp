@@ -24,7 +24,7 @@ jobs:
           command: npm run build-prod
       - run:
           name: angular-test
-          command: ng test --watch=false
+          command: npm run test:single-run
       - store_artifacts:
           path: test-results.xml
           prefix: tests
