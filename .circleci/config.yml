@@ -6,6 +6,9 @@ jobs:
       - image: circleci/node:8.11.3-browsers
     steps:
       - checkout
+      - run:
+        name: remove package-lock
+        command: rm package-lock.json
       - restore_cache:
           key: dependency-cache-{{ checksum "package-lock.json" }}
       - run:
