@@ -6,19 +6,19 @@ jobs:
       - image: circleci/node:8.11.3-browsers
     steps:
       - checkout
-      - restore_cache:
-          key: dependency-cache-{{ checksum "package-lock.json" }}
+    #   - restore_cache:
+    #       key: dependency-cache-{{ checksum "package-lock.json" }}
       - run:
           name: install-dependencies
           command: npm install
-      - save_cache:
-          key: dependency-cache-{{ checksum "package-lock.json" }}
-          paths:
-            - ~/.cache/node_modules
-            - ./node_modules
-      - run:
-          name: angular-build
-          command: npm run build-prod
+    #   - save_cache:
+    #       key: dependency-cache-{{ checksum "package-lock.json" }}
+    #       paths:
+    #         - ~/.cache/node_modules
+    #         - ./node_modules
+    #   - run:
+    #       name: angular-build
+    #       command: npm run build-prod
       - run:
           name: angular-test
           command: npm run test:single-run
