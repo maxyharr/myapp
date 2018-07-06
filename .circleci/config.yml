@@ -23,7 +23,7 @@ jobs:
           name: angular-test
           command: npm run test:single-run
       - store_test_results:
-          path: /tmp/test-results
+          path: test-results.xml
       - store_artifacts:
           path: test-results.xml
           prefix: tests
