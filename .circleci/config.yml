@@ -1,12 +1,9 @@
 version: 2
-machine:
-  node:
-    version: 8.11.3
 jobs:
   build:
     working_directory: ~/src
     docker:
-      - image: circleci/node:6-browsers
+      - image: circleci/node:8.11.3-browsers
     steps:
       - checkout
       - restore_cache:
