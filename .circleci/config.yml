@@ -17,7 +17,7 @@ jobs:
           paths:
             - ~/.cache/node_modules
             - ./node_modules
-      # - run: npm rebuild node-sass --force
+      - run: npm rebuild node-sass
       - run:
           name: angular-test
           command: npm run test:single-run
