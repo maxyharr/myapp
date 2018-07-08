@@ -1,8 +1,4 @@
 version: 2
-containerInfo:
-  env:
-    - DISPLAY=:99
-    - CHROME_BIN=/usr/bin/google-chrome
 jobs:
   build:
     working_directory: ~/src
@@ -10,7 +6,7 @@ jobs:
       - image: maxatverblio/angular-test:0.0.1
     steps:
       - checkout
-      - run: echo "Running angular test suite with $NODE_VERSION"
+      - run: echo "Running angular test suite with node $NODE_VERSION, npm $NPM_VERSION"
       - restore_cache:
           key: dependency-cache-{{ checksum "package-lock.json" }}
       - run:
