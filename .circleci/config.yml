@@ -1,7 +1,7 @@
 version: 2
 jobs:
   build:
-    working_directory: ~/src
+    working_directory: ~/
     docker:
       - image: maxatverblio/angular-test:0.0.1
     steps:
@@ -17,7 +17,7 @@ jobs:
           paths:
             - ~/.cache/node_modules
             - ./node_modules
-      - run: npm rebuild node-sass --force
+      # - run: npm rebuild node-sass --force
       - run:
           name: angular-test
           command: npm run test:single-run
