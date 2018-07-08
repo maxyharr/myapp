@@ -1,7 +1,7 @@
 version: 2
 jobs:
   build:
-    working_directory: ~/.
+    working_directory: ~/src
     docker:
       - image: maxatverblio/angular-test:0.0.1
     steps:
