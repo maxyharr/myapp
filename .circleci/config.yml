@@ -3,22 +3,20 @@ jobs:
   build:
     working_directory: ~/src
     docker:
-      - image: circleci/node:8.11.3-browsers
+      - image: maxatverblio/angular-test:0.0.1
     steps:
       - checkout
-    #   - restore_cache:
-    #       key: dependency-cache-{{ checksum "package-lock.json" }}
+      - run: echo "Running angular test suite with $NODE_VERSION"
+      - restore_cache:
+          key: dependency-cache-{{ checksum "package-lock.json" }}
       - run:
           name: install-dependencies
           command: npm install
-    #   - save_cache:
-    #       key: dependency-cache-{{ checksum "package-lock.json" }}
-    #       paths:
-    #         - ~/.cache/node_modules
-    #         - ./node_modules
-    #   - run:
-    #       name: angular-build
-    #       command: npm run build-prod
+      - save_cache:
+          key: dependency-cache-{{ checksum "package-lock.json" }}
+          paths:
+            - ~/.cache/node_modules
+            - ./node_modules
       - run:
           name: angular-test
           command: npm run test:single-run
