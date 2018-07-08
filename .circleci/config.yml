@@ -1,4 +1,8 @@
 version: 2
+containerInfo:
+  env:
+    - DISPLAY=:99
+    - CHROME_BIN=/usr/bin/google-chrome
 jobs:
   build:
     working_directory: ~/src
